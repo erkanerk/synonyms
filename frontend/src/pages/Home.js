@@ -9,6 +9,7 @@ function Home() {
         width: "100vw",
         height: "100vh",
         padding: "10%",
+        paddingBottom: "30%",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
