@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { TextField, Button, Box } from "@mui/material"
-import { SEARCH_BAR_PLACEHOLDER } from "../copy"
+import { SEARCH_BAR_PLACEHOLDER, SEARCH_BUTTON_TEXT } from "../copy"
 
 function SearchBar() {
   const [searchValue, setSearchValue] = useState("")
@@ -42,7 +42,6 @@ function SearchBar() {
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
         size="medium"
-        fullwidth
         sx={{ width: "700px", maxWidth: "70%", backgroundColor: "white" }}
       />
       <Button
@@ -51,7 +50,7 @@ function SearchBar() {
         onClick={handleSearch}
         sx={{ height: "56px" }}
       >
-        Search
+        {SEARCH_BUTTON_TEXT}
       </Button>
     </Box>
   )

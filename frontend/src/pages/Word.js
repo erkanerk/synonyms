@@ -1,6 +1,7 @@
 import React from "react"
 import { useParams } from "react-router-dom"
 import { Box, Typography } from "@mui/material"
+import { SEARCH_RESULT_TEXT } from "../copy"
 
 function Word() {
   const { word } = useParams()
@@ -18,8 +19,7 @@ function Word() {
         textAlign: "center",
       }}
     >
-      <Typography variant="h4">Word Page</Typography>
-      <Typography variant="body1">You searched for: {word}</Typography>
+      <Typography variant="h4">{SEARCH_RESULT_TEXT(word)}</Typography>
     </Box>
   )
 }
