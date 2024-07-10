@@ -13,6 +13,9 @@ function SearchBar() {
 
   const handleSearch = () => {
     const sanitizedWord = searchValue.trim().toLowerCase()
+    if (!sanitizedWord) {
+      return
+    }
     navigate(`/word/${sanitizedWord}`)
   }
 

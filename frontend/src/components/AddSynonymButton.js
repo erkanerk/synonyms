@@ -56,11 +56,6 @@ const AddSynonymButton = ({ word, onSuccess }) => {
 
   return (
     <div>
-      {addSynonymMutation.isError && (
-        <Typography variant="body1" color="error">
-          {GENERIC_ERROR}
-        </Typography>
-      )}
       <Button
         disabled={addSynonymMutation.isLoading}
         variant="contained"
@@ -72,6 +67,11 @@ const AddSynonymButton = ({ word, onSuccess }) => {
       <Dialog open={openDialog} onClose={handleCloseDialog}>
         <DialogTitle>{ADD_SYNONYM_DIALOG_TITLE(word)}</DialogTitle>
         <DialogContent>
+          {addSynonymMutation.isError && (
+            <Typography variant="body1" color="error">
+              {GENERIC_ERROR}
+            </Typography>
+          )}
           <TextField
             autoFocus
             margin="dense"
