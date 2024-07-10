@@ -3,14 +3,13 @@ import PropTypes from "prop-types"
 import {
   Button,
   Typography,
-  CircularProgress,
   Dialog,
   DialogTitle,
   DialogContent,
   DialogActions,
   TextField,
 } from "@mui/material"
-import { useAddSynonym } from "../hooks/api"
+import { useAddSynonym } from "../hooks/api.js"
 import {
   ADD_SYNONYM_BUTTON_TEXT,
   GENERIC_ERROR,
@@ -61,12 +60,13 @@ const AddSynonymButton = ({ word, onSuccess }) => {
           {GENERIC_ERROR}
         </Typography>
       )}
-      <Button variant="contained" color="primary" onClick={handleOpenDialog}>
-        {addSynonymMutation.isLoading ? (
-          <CircularProgress size={24} />
-        ) : (
-          ADD_SYNONYM_BUTTON_TEXT
-        )}
+      <Button
+        disabled={addSynonymMutation.isLoading}
+        variant="contained"
+        color="primary"
+        onClick={handleOpenDialog}
+      >
+        {ADD_SYNONYM_BUTTON_TEXT}
       </Button>
       <Dialog open={openDialog} onClose={handleCloseDialog}>
         <DialogTitle>{ADD_SYNONYM_DIALOG_TITLE(word)}</DialogTitle>

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Button, Typography, CircularProgress } from "@mui/material"
-import { useAddWord } from "../hooks/api"
+import { Button, Typography } from "@mui/material"
+import { useAddWord } from "../hooks/api.js"
 import { ADD_WORD_BUTTON_TEXT, GENERIC_ERROR } from "../copy"
 
 const AddWordButton = ({ word, onSuccess }) => {
@@ -29,11 +29,7 @@ const AddWordButton = ({ word, onSuccess }) => {
           color="primary"
           onClick={handleAddWord}
         >
-          {addWordMutation.isLoading ? (
-            <CircularProgress size={24} />
-          ) : (
-            ADD_WORD_BUTTON_TEXT(word)
-          )}
+          {ADD_WORD_BUTTON_TEXT(word)}
         </Button>
       )}
     </div>

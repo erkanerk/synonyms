@@ -8,7 +8,7 @@ import {
   SYNONYMS_LIST_PREFIX,
   NO_SYNONYMS,
 } from "../copy"
-import { useGetSynonyms } from "../hooks/api"
+import { useGetSynonyms } from "../hooks/api.js"
 import AddWordButton from "../components/AddWordButton"
 import AddSynonymButton from "../components/AddSynonymButton"
 
@@ -36,7 +36,7 @@ function Word() {
         )
       } else {
         return (
-          <Typography variant="h4">{FAILED_TO_FETCH_SYNONYMS(word)}</Typography>
+          <Typography variant="h4" color="error">{FAILED_TO_FETCH_SYNONYMS(word)}</Typography>
         )
       }
     }
