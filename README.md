@@ -10,7 +10,7 @@ This project consists of a backend API and a frontend React application for mana
 ## Backend
 
 ### Prerequisites
-- Go 1.16 or higher
+- Go 1.22.5 or higher
 
 ### Running the backend locally
 Navigate to the backend folder and run `go mod tidy` to install dependencies. Then run `go run main.go`.
