@@ -29,6 +29,7 @@ const AddSynonymButton = ({ word, onSuccess }) => {
 
   const handleCloseDialog = () => {
     setOpenDialog(false)
+    setSynonym("")
   }
 
   const handleInputChange = (event) => {
