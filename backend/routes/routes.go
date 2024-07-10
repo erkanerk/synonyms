@@ -7,7 +7,7 @@ import (
 )
 
 func RegisterRoutes(r *mux.Router) {
-    r.HandleFunc("/word", handlers.AddWord).Methods("POST")
-    r.HandleFunc("/synonym/{word}", handlers.AddSynonym).Methods("POST")
-    r.HandleFunc("/synonyms/{word}", handlers.GetSynonyms).Methods("GET")
+	r.HandleFunc("/word", handlers.AddWord).Methods("POST")
+	r.HandleFunc("/synonym/{word}", handlers.AddSynonym).Methods("POST")
+	r.HandleFunc("/synonyms/{word}", handlers.GetSynonyms).Methods("GET")
 }

@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"fmt"
 	"net/http"
 	"strings"
 	"synonyms-backend/data"
@@ -15,7 +16,7 @@ func GetSynonyms(w http.ResponseWriter, r *http.Request) {
 
 	// Return 404 if word does not exist
 	if !data.SynonymDict.WordExists(word) {
-		utils.RespondWithError(w, http.StatusNotFound, "word does not exist in dictionary")
+		utils.RespondWithError(w, http.StatusNotFound, fmt.Sprintf("word '%s' does not exist in dictionary", word))
 		return
 	}
 
